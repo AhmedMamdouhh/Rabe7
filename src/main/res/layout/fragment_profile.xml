@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userObject"
+            type="com.rabe7.community.model.entity.auth.User" />
+
+        <variable
+            name="profileClickListener"
+            type="com.rabe7.community.ui.main.profile.ProfileViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <!-- diagonal view -->
+        <View
+            android:id="@+id/v_profile_diagonal_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_diagonal" />
+        <!-- border -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_profile_image_shadow"
+            android:layout_width="@dimen/dp155w"
+            android:layout_height="@dimen/dp155h"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp47h"
+            card_view:cardBackgroundColor="@color/colorGold"
+            card_view:cardCornerRadius="155dp"
+            card_view:cardElevation="@dimen/dp16w" />
+        <!-- round image -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp50h"
+            card_view:cardBackgroundColor="@color/colorWhite"
+            card_view:cardCornerRadius="155dp"
+            card_view:cardElevation="@dimen/dp16w"
+            card_view:cardPreventCornerOverlap="false">
+
+            <ImageView
+                android:layout_width="@dimen/dp150w"
+                android:layout_height="@dimen/dp150h"
+                android:src="@drawable/img_profile_place_holder" />
+        </androidx.cardview.widget.CardView>
+        <!-- user name AND user id container -->
+        <LinearLayout
+            android:id="@+id/ll_user_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8w"
+            android:layout_below="@+id/cv_profile_image"
+            android:orientation="vertical">
+
+            <!-- user name -->
+            <TextView
+                android:id="@+id/tv_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:autofillHints="@string/auto_fit_hint_profile_name"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@string/label_profile_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                app:text="@{userObject.name}" />
+
+            <!-- user code -->
+            <TextView
+                android:id="@+id/tv_profile_referrer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/label_profile_referer_code"
+                android:textColor="@color/colorGold"
+                android:textStyle="bold"
+                app:text="@{userObject.userCode}" />
+
+
+        </LinearLayout>
+        <!-- user money details -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp32w"
+            android:layout_marginBottom="@dimen/dp16w"
+            android:layout_below="@+id/ll_user_details_container">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- referral code -->
+                <LinearLayout
+                    android:id="@+id/ll_profile_referrer_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp100h"
+
+                    android:layout_marginStart="@dimen/dp8w"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_profile_referral"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp8w"
+                        android:layout_weight="1"
+                        android:onClick="@{()-> profileClickListener.onReferrerCodeClick()}"
+                        card_view:cardBackgroundColor="@color/colorWhite"
+                        card_view:cardCornerRadius="@dimen/dp8w"
+                        card_view:cardElevation="@dimen/dp4w">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp50w"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp8w"
+                                android:src="@drawable/ic_referral" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/dp8w"
+                                    android:gravity="center"
+                                    android:text="@string/profile_referrer_add"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/referrer_code"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColorHint="@color/colorGold"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+                <!-- coins And points -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp100h"
+                    android:layout_marginStart="@dimen/dp8w"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_profile_coins"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp8w"
+                        android:layout_weight="1"
+                        android:onClick="@{()-> profileClickListener.onCoinsClick()}"
+                        card_view:cardBackgroundColor="@color/colorWhite"
+                        card_view:cardCornerRadius="@dimen/dp8w"
+                        card_view:cardElevation="@dimen/dp4w">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp50w"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp8w"
+                                android:src="@drawable/img_coins" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/dp8w"
+                                    android:gravity="center"
+                                    android:text="@string/label_profile_coins_title"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:hint="@string/label_profile_coins_value"
+                                    app:text="@{userObject.coinBalance}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColorHint="@color/colorGold"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_profile_points"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp8w"
+                        android:layout_weight="1"
+                        android:onClick="@{()-> profileClickListener.onPointsClick()}"
+                        card_view:cardBackgroundColor="@color/colorWhite"
+                        card_view:cardCornerRadius="@dimen/dp8w"
+                        card_view:cardElevation="@dimen/dp4w">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp50w"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp8w"
+                                android:src="@drawable/img_points" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/dp8w"
+                                    android:gravity="center"
+                                    android:text="@string/label_profile_points_title"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:hint="@string/label_profile_coins_value"
+                                    app:text="@{userObject.pointBalance}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColorHint="@color/colorGold"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <!-- cash -->
+                <LinearLayout
+                    android:id="@+id/ll_profile_cash_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp100h"
+                    android:layout_marginStart="@dimen/dp8w"
+                    android:visibility="gone"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_profile_cash"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp8w"
+                        android:layout_weight="1"
+                        card_view:cardBackgroundColor="@color/colorWhite"
+                        card_view:cardCornerRadius="@dimen/dp8w"
+                        card_view:cardElevation="@dimen/dp4w">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp50w"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dp8w"
+                                android:src="@drawable/img_cash" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/dp8w"
+                                    android:gravity="center"
+                                    android:text="@string/label_profile_cash_title"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="@string/label_profile_coins_value"
+                                    app:text="@{userObject.cashBalance}"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textColor="@color/colorGold"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</layout>

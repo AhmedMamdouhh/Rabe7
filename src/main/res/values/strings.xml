@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">Rabe7</string>
+    <string name="app_bottom">Rabe7 Community</string>
+
+
+    <!-- navigation -->
+    <string name="label_navigation_profile_title">Profile</string>
+    <string name="label_navigation_credit_title">Credit</string>
+    <string name="label_navigation_home_title">Home</string>
+
+    <!-- Login -->
+    <!-- sign up -->
+    <string name="label_sign_up_title">Sign Up</string>
+    <string name="label_sign_up_details">\tNew to Rabe7 ?\tcreate your account now!</string>
+    <string name="label_sign_up_user_name">User Name</string>
+    <string name="label_sign_up_secondName">Second Name</string>
+    <string name="label_sign_up_password">Choose password</string>
+    <string name="label_email">Email</string>
+    <string name="label_facebook">Facebook</string>
+    <string name="label_phone">Phone</string>
+    <string name="label_sign_up_confirm_password">Confirm password</string>
+    <string name="label_or">Or</string>
+    <string name="label_submit">Submit</string>
+    <string name="referral_title">Referral code</string>
+
+    <!-- sign in -->
+    <string name="label_sign_in_title">Log in</string>
+    <string name="label_sign_in_details">Already have an account lets log in!</string>
+    <string name="label_forgot_password">Forgot password!</string>
+
+    <!-- forgot password -->
+    <string name="forgot_password_email">Enter your Email</string>
+    <string name="forgot_password_submit">Submit</string>
+    <string name="forgot_password_title">Forgot password</string>
+
+
+    <!-- menu -->
+    <string name="label_profile">Profile</string>
+    <string name="label_home">Home</string>
+    <string name="label_logout">Logout</string>
+    <string name="label_trader_manager">Manager</string>
+    <string name="be_trader">JOIN OUR BUSINESS</string>
+
+    <!-- Profile -->
+    <string name="label_profile_name">Ahmed Mamdouh</string>
+    <string name="label_profile_referer_code">00054</string>
+    <string name="label_profile_coins_title">Coins</string>
+    <string name="label_profile_points_title">Points</string>
+    <string name="label_profile_shares_title">Shares</string>
+    <string name="label_profile_cash_title">Cash</string>
+    <string name="label_profile_coins_value">0.0</string>
+    <string name="profile_referrer_code">0000</string>
+    <string name="profile_referrer_add">Add referrer code here:</string>
+    <string name="profile_referrer_added">Your referrer code is:</string>
+
+    <!-- trader manager -->
+    <string name="trader_price">Price</string>
+    <string name="trader_paid_amount">Paid amount</string>
+    <string name="trader_member_code">Member code</string>
+
+    <!-- coins -->
+    <string name="coins_title">Coins</string>
+    <string name="coins_amount_title">You have \n%s\n coins</string>
+
+    <!-- points -->
+    <string name="points_confirm">YOU HAVE REQUESTED TO \nREDEEM %s POINTS</string>
+    <string name="points_confirm_title">Confirm</string>
+    <string name="points_amount_title">You have \n%s\n points</string>
+    <string name="points_amount">0.0</string>
+    <string name="points_redeem">Redeem</string>
+    <string name="points_no">Cancel</string>
+
+    <!-- referrer code -->
+    <string name="referrer_title">Referrer code</string>
+    <string name="referrer_code">0000</string>
+
+    <!-- Vouchers -->
+    <string name="label_vouchers_title">VOUCHERS</string>
+    <string name="label_vouchers_name">Internet Discount</string>
+    <string name="label_vouchers_price">10.0</string>
+    <string name="label_vouchers_currency">coins</string>
+    <string name="label_vouchers_expire_title">Expire in</string>
+    <string name="label_vouchers_expire_date">29 March 2021</string>
+
+    <!-- tickets -->
+    <string name="label_tickets_title">TICKETS</string>
+    <string name="label_tickets_name">Ticket Name</string>
+    <string name="label_tickets_description">Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry</string>
+    <string name="label_tickets_price">Price</string>
+    <string name="label_tickets_currency_value">10.0</string>
+    <string name="label_tickets_currency">Coins</string>
+
+    <!-- Coupons -->
+    <string name="label_coupons_title">COUPON</string>
+    <string name="label_coupons_special_offer">SPECIAL OFFER</string>
+    <string name="label_coupons_currency">Coins</string>
+    <string name="label_coupons_currency_value">10.0</string>
+
+
+    <!-- home offers -->
+    <string name="label_offer_title">Title</string>
+    <string name="label_offer_price">Price</string>
+
+    <!-- no connection -->
+    <string name="label_no_connection_retry">Reload</string>
+
+
+    <string name="label_error_message_title">Error!</string>
+    <string name="label_success_message_title">Success</string>
+
+
+    <!-- error-->
+    <string name="error_no_connection">Oops , there\'s no Network connection</string>
+    <string name="error_login_phone">Please enter your phone number </string>
+    <string name="error_login_password">Please enter your password</string>
+
+    <!-- sign up error :-->
+    <string name="error_register_name_empty">Please enter your name!</string>
+    <string name="error_register_phone_empty">Please enter your phone number!</string>
+    <string name="error_register_phone_wrong">Please enter a valid phone number!</string>
+    <string name="error_register_email_empty">Please enter your email address!</string>
+    <string name="error_register_email_wrong">Please enter a valid email address!</string>
+    <string name="error_register_password_empty">Please enter your password!</string>
+    <string name="error_register_password_wrong">Password must be at least 5 characters long! </string>
+    <string name="error_register_confirm_password_empty">Please confirm your password!</string>
+    <string name="error_register_confirm_password_wrong">Password confirmation doesn\'t match Password</string>
+    <string name="error_register_referrer_size">This is not valid referrer code</string>
+
+    <!-- login -->
+    <string name="error_login_name_empty">Please enter your name!</string>
+    <string name="error_login_phone_empty">Please enter your phone number!</string>
+    <string name="error_login_phone_wrong">Please enter a valid phone number!</string>
+
+    <!-- forgot password -->
+    <string name="error_forgot_password_empty">Please enter your Email!</string>
+    <string name="error_forgot_password_valid">Please enter a valid Email!</string>
+
+    <string name="auto_fit_hint_profile_name">Name</string>
+
+    <!-- points error -->
+    <string name="error_points_empty">Please enter points amount !</string>
+    <string name="error_points_valid">You don\'t have enough points!</string>
+
+    <!-- referrer error -->
+    <string name="error_referrer_empty">Please enter referrer code!</string>
+    <string name="error_referrer_valid">Referrer code not valid!</string>
+
+    <!-- trader error -->
+    <string name="error_trader_price">Please enter the price</string>
+    <string name="error_trader_paid_amount">Please enter the paid amount</string>
+    <string name="error_trader_member_code">Please enter the member code</string>
+
+</resources>

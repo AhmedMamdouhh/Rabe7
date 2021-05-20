@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: org.aviran.cookiebar2:cookiebar2:1.1.3@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../New islam/.gradle/6.5/caches/transforms-2/files-2.1/3cc4155eecd60136bf6c311331c39bfb/jetified-cookiebar2-1.1.3/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../New islam/.gradle/6.5/caches/transforms-2/files-2.1/3cc4155eecd60136bf6c311331c39bfb/jetified-cookiebar2-1.1.3/res" />
+      <root url="file://$PROJECT_DIR$/../../New islam/.gradle/6.5/caches/transforms-2/files-2.1/3cc4155eecd60136bf6c311331c39bfb/jetified-cookiebar2-1.1.3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../New islam/.gradle/6.5/caches/modules-2/files-2.1/org.aviran.cookiebar2/cookiebar2/1.1.3/4cadf232fb4554ca720d656f9be4a580452525c6/cookiebar2-1.1.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../New islam/.gradle/6.5/caches/modules-2/files-2.1/org.aviran.cookiebar2/cookiebar2/1.1.3/4c697af70c5d3491ca7e3bfaa9977549ac0c2ba0/cookiebar2-1.1.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

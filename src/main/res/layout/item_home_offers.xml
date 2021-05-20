@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="offerObject"
+            type="com.rabe7.community.model.entity.home.Offers" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dp180w"
+        android:layout_height="@dimen/dp230h"
+        android:layout_margin="@dimen/dp16w"
+        card_view:cardCornerRadius="@dimen/dp8w"
+        card_view:cardElevation="@dimen/dp8w">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp8w"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp8w"
+                android:gravity="center"
+                android:text="@string/label_offer_title"
+                app:text="@{offerObject.offerName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/label_offer_price"
+                app:text="@{String.valueOf(offerObject.offerPrice)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorGold"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_home_offers_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_placehoder" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

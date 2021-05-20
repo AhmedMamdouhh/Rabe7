@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/img_menu_home"
+            android:title="@string/label_home"/>
+
+        <item android:id="@+id/nav_profile"
+            android:icon="@drawable/img_menu_profile"
+            android:title="@string/label_profile"/>
+
+        <item android:id="@+id/nav_trader_manager"
+            android:icon="@drawable/ic_manager"
+            android:title="@string/label_trader_manager"/>
+
+        <item android:id="@+id/nav_our_business"
+            android:icon="@drawable/ic_business_partner"
+            android:title="@string/be_trader"/>
+
+        <item android:id="@+id/nav_logout"
+            android:icon="@drawable/img_menu_logout"
+            android:title="@string/label_logout"/>
+
+
+    </group>
+</menu>

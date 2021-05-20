@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userObject"
+            type="com.rabe7.community.model.entity.auth.User" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_nav_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp400h"
+        android:background="@drawable/view_oval">
+
+        <!-- round image -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_profile_image"
+            android:layout_width="@dimen/dp105w"
+            android:layout_height="@dimen/dp105h"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp160h"
+            card_view:cardBackgroundColor="@color/colorWhite"
+            card_view:cardCornerRadius="155dp"
+            card_view:cardElevation="@dimen/dp16w"
+            card_view:cardPreventCornerOverlap="false">
+
+            <ImageView
+                android:layout_width="@dimen/dp105w"
+                android:layout_height="@dimen/dp105h"
+                android:src="@drawable/img_profile_place_holder" />
+        </androidx.cardview.widget.CardView>
+        <!-- user name & user id container -->
+        <LinearLayout
+            android:id="@+id/ll_user_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv_profile_image"
+            android:layout_marginTop="@dimen/dp8w"
+            android:orientation="vertical">
+
+            <!-- user name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:autofillHints="@string/auto_fit_hint_profile_name"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/label_profile_name"
+                app:text="@{userObject.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+            <!-- user code -->
+            <TextView
+                android:id="@+id/tv_nav_header_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/label_profile_referer_code"
+                app:text="@{userObject.userCode}"
+                android:textColor="@color/colorGold"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

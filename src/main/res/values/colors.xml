@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3a1d33</color>
+    <color name="colorAccent">#151a2d</color>
+    <color name="colorLightGray">#EDEDED</color>
+    <color name="colorText">#838383</color>
+    <color name="colorGold">#a88935</color>
+    <color name="colorGoldLight">#8D7432</color>
+
+    <!-- mix primary + accent + gold -->
+    <color name="colorMixer">#88433d</color>
+    <color name="colorSuperMixer">#62324f</color>
+
+    <color name="colorPrimaryLightTransparent">#66FFFFFF</color>
+    <color name="colorRed">#DD1A1A</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGreen">#7BB028</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackTransparent">#33000000</color>
+    <color name="colorHint">#A6A6AF</color>
+    <color name="colorBlue">#26A9E1</color>
+    <color name="colorDarkBlue">#1974BA</color>
+    <color name="colorPink">#FF8B8F</color>
+
+    <!-- coupon colors: -->
+    <color name="colorCouponBehind">#69908F</color>
+    <color name="colorCouponBehindText">#CCC4AF</color>
+    <color name="colorCouponBackground">#D5B795</color>
+    <color name="colorCouponText">#724312</color>
+
+
+</resources>

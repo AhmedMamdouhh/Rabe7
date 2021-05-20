@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userObject"
+            type="com.rabe7.community.model.entity.auth.User" />
+
+        <variable
+            name="coinsClickListeners"
+            type="com.rabe7.community.ui.main.coins.CoinsViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/abl_coins_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageButton
+                        android:id="@+id/cancelBtn"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_close_white"
+                        android:onClick="@{()-> coinsClickListeners.onCloseClicked()}"
+                        android:tint="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/nameToolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/dp16w"
+                        android:gravity="center"
+                        android:text="@string/coins_title"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@android:color/white" />
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/bottomSheet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp16w"
+                        android:layout_marginBottom="@dimen/dp16w"
+                        android:text="@string/coins_amount_title"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        app:text="@{String.format(@string/coins_amount_title, userObject.coinBalance)}" />
+
+
+                    <!-- tickets -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_tickets_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="@dimen/dp8w"
+                        android:layout_weight="1"
+                        android:onClick="@{coinsClickListeners::onTicketsClicked}"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                        <com.vipulasri.ticketview.TicketView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:ticketBackgroundColor="@color/colorDarkBlue"
+                            app:ticketCornerRadius="@dimen/dp16w"
+                            app:ticketCornerType="rounded"
+                            app:ticketDividerType="dash"
+                            app:ticketElevation="@dimen/dp16w"
+                            app:ticketOrientation="vertical"
+                            app:ticketScallopPositionPercent="60"
+                            app:ticketScallopRadius="@dimen/dp10w"
+                            app:ticketShowDivider="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/label_tickets_title"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/sp40"
+                            android:textStyle="bold" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- vouchers -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_vouchers_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="@dimen/dp8w"
+                        android:layout_weight="1"
+                        android:onClick="@{coinsClickListeners::onVouchersClicked}"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                        <com.vipulasri.ticketview.TicketView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:ticketBackgroundColor="@color/colorPink"
+                            app:ticketCornerRadius="@dimen/dp16w"
+                            app:ticketCornerType="rounded"
+                            app:ticketDividerType="dash"
+                            app:ticketElevation="@dimen/dp16w"
+                            app:ticketOrientation="horizontal"
+                            app:ticketScallopPositionPercent="60"
+                            app:ticketScallopRadius="@dimen/dp10w"
+                            app:ticketShowDivider="false" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/label_vouchers_title"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/sp40"
+                            android:textStyle="bold" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

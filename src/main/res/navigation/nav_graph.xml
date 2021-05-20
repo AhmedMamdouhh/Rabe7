@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@+id/homeScreen">
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.rabe7.community.ui.main.home.HomeFragment"
+        android:label="@string/label_home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.rabe7.community.ui.main.profile.ProfileFragment"
+        android:label="@string/label_navigation_profile_title"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileScreen_to_coinsSheet"
+            app:destination="@id/coinsSheet" />
+        <action
+            android:id="@+id/action_profileScreen_to_pointsSheet"
+            app:destination="@id/pointsSheet" />
+        <action
+            android:id="@+id/action_profileScreen_to_referrerSheet"
+            app:destination="@id/referrerSheet" />
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/coinsSheet"
+        android:name="com.rabe7.community.ui.main.coins.CoinsSheet"
+        android:label="CoinsSheet" >
+<!--        <action-->
+<!--            android:id="@+id/action_coinsSheet_to_ticketsSheet"-->
+<!--            app:destination="@id/ticketsSheet" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_coinsSheet_to_vouchersSheet"-->
+<!--            app:destination="@id/vouchersSheet" />-->
+    </dialog>
+    <dialog
+        android:id="@+id/pointsSheet"
+        android:name="com.rabe7.community.ui.main.points.PointsSheet"
+        android:label="PointsSheet" />
+    <fragment
+        android:id="@+id/traderManagerFragment"
+        android:name="com.rabe7.community.ui.main.trader_manager.TraderManagerFragment"
+        android:label="TraderManagerFragment" />
+<!--    <dialog-->
+<!--        android:id="@+id/ticketsSheet"-->
+<!--        android:name="com.rabe7.community.ui.main.creadit.tickets.TicketsSheet"-->
+<!--        android:label="TicketsSheet" />-->
+    <dialog
+        android:id="@+id/referrerSheet"
+        android:name="com.rabe7.community.ui.main.referrer_id.ReferrerSheet"
+        android:label="ReferrerSheet" />
+
+    <fragment
+        android:id="@+id/registerTraderFragment"
+        android:name="com.rabe7.community.ui.auth.trader_register.RegisterTraderFragment"
+        android:label="@string/be_trader" />
+<!--    <dialog-->
+<!--        android:id="@+id/vouchersSheet"-->
+<!--        android:name="com.rabe7.community.ui.main.creadit.vouchers.VouchersSheet"-->
+<!--        android:label="VouchersSheet" />-->
+
+
+</navigation>

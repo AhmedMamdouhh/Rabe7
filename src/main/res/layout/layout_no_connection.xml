@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cookie"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_no_connection_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_no_connection_close"
+        android:layout_width="@dimen/dp75w"
+        android:layout_height="@dimen/dp75h"
+        android:padding="@dimen/dp16w"
+        android:src="@drawable/ic_close_white"
+        android:layout_alignParentEnd="true"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lotti_no_connection_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"
+        app:lottie_rawRes="@raw/no_connection_animation"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true" />
+
+
+    <TextView
+        android:id="@+id/tv_no_connection_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/error_no_connection"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/dp32w"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorGold"
+        android:textStyle="bold"/>
+
+
+
+</RelativeLayout>

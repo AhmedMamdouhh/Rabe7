@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="voucherObject"
+            type="com.rabe7.community.model.entity.credit.Vouchers" />
+
+        <variable
+            name="voucherListener"
+            type="com.rabe7.community.ui.main.creadit.vouchers.VouchersViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp190h"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp8w"
+            android:onClick="@{()-> voucherListener.onVouchersClicked(voucherObject.vouchersId)}"
+            android:background="@drawable/gradient_vouchers_card_background" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_vouchers_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16w"
+                android:layout_marginTop="@dimen/dp16w"
+                android:layout_marginEnd="@dimen/dp16w"
+                android:text="@string/label_vouchers_name"
+                app:text="@{voucherObject.vouchersName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16w"
+                android:layout_marginEnd="@dimen/dp16w"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_vouchers_price"
+                    app:text="@{voucherObject.vouchersPrice}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/sp24"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp4w"
+                    android:text="@string/label_vouchers_currency"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_vouchers_expire_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_vouchers_expire_date"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/dp16w"
+            android:layout_marginTop="@dimen/dp8w"
+            android:layout_marginEnd="@dimen/dp16w"
+            android:text="@string/label_vouchers_expire_title"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tv_vouchers_expire_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp16w"
+            android:layout_marginEnd="@dimen/dp16w"
+            android:layout_marginBottom="@dimen/dp16w"
+            android:text="@string/label_vouchers_expire_date"
+            app:text="@{voucherObject.vouchersExpire}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view_voucher_dummy_end"
+            android:layout_width="@dimen/dp40w"
+            android:layout_height="@dimen/dp40h"
+            android:layout_above="@id/tv_vouchers_expire_title"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/dp5w"
+            android:layout_marginEnd="@dimen/dp5w"
+            android:background="@drawable/shape_triangle"
+            android:rotation="270" />
+
+        <View
+            android:id="@+id/view_voucher_dashed_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40h"
+            android:layout_above="@+id/tv_vouchers_expire_title"
+            android:background="@drawable/dashed_line" />
+
+        <View
+            android:id="@+id/view_voucher_dummy_start"
+            android:layout_width="@dimen/dp40w"
+            android:layout_height="@dimen/dp40h"
+            android:layout_above="@id/tv_vouchers_expire_title"
+            android:layout_marginStart="@dimen/dp5w"
+            android:layout_marginEnd="@dimen/dp5w"
+            android:background="@drawable/shape_triangle"
+            android:rotation="90" />
+
+
+    </RelativeLayout>
+
+
+</layout>
